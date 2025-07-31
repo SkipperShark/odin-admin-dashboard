@@ -14,7 +14,7 @@
 .app {
     min-height: 100vh; 
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(min-content, 1fr) 4fr;
 }
 
 .sideBar {
@@ -41,11 +41,18 @@
     }
 }
 
-.header {
-    background-color: lightcoral;
-}
+.main {
+    display: grid;
+    grid-template-rows: minmax(min-content, 1fr) 5fr;
 
-.content {
-    background-color: lightgreen;
+    background: white;
+
+    .header {
+    }
+    
+    .content {
+        background-color: lightgray;
+    }
+
 }
 
