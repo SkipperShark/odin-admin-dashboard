@@ -7,10 +7,23 @@
 .app {
     min-height: 100vh; 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 4fr;
+}
 
-    > * {
-        border: 1px solid blue;
-    }
+.main {
+    display: grid;
+    
+}
+
+.sideBar {
+    background-color: lightblue;
+}
+
+.header {
+    background-color: lightcoral;
+}
+
+.content {
+    background-color: lightgreen;
 }
 
