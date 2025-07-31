@@ -4,19 +4,41 @@
     margin: 0;
 }
 
+:root {
+    --font-size-title : 2.0rem;
+    --font-size-large : 1.5rem;
+    --font-size-normal : 1.0rem;
+    --font-size-small : 0.75rem;
+}
+
 .app {
     min-height: 100vh; 
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
 
-.main {
-    display: grid;
-    
-}
-
 .sideBar {
-    background-color: lightblue;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-rows: repeat(3, minmax(3rem, min-content));
+
+    background-color: indigo;
+    color: white;
+
+    .siteLogo {
+        border: 5px solid green;
+        font-size: var(--font-size-title);
+    }
+
+    .nav {
+        border: 5px solid red;
+        font-size: var(--font-size-large);
+    }
+
+    .settings {
+        border: 5px solid yellow;
+        font-size: var(--font-size-large);
+    }
 }
 
 .header {
