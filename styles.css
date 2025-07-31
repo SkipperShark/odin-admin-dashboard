@@ -48,6 +48,33 @@
     background: white;
 
     .header {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "searchBar banner"
+            "userInfo buttons";
+
+        > * {
+            border: 2px solid blue
+        }
+
+        .searchBar {
+            grid-area: searchBar;
+        }
+
+        .banner {
+            grid-area: banner;
+        }
+
+        .userInfo {
+            grid-area: userInfo;
+        }
+        
+        .buttons {
+            grid-area: buttons
+        }
+
     }
     
     .content {
