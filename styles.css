@@ -28,6 +28,13 @@
     .siteLogo {
         border: 5px solid green;
         font-size: var(--font-size-title);
+
+        svg {
+            fill: white;
+            /* height: 1rem;
+            width: 1rem; */
+            /* background-color: white; */
+        }
     }
 
     .nav {
