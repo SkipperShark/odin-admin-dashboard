@@ -17,7 +17,6 @@
 }
 
 svg {
-  fill: white;
   height: var(--svg-height-medium);
   width: var(--svg-width);
 }
@@ -39,16 +38,25 @@ svg {
   display: grid;
   grid-gap: var(--svg-height-large);
   grid-template-rows: repeat(3, minmax(3rem, min-content));
-
+  
   background-color: indigo;
   color: white;
 
+  svg {
+    fill: white;
+  }
+
+  ul {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
+    grid-gap: 10px;
+  }
+  
   .siteLogo {
     font-size: var(--font-size-title);
 
     svg {
       height: var(--svg-height-large);
-      width: var(--svg-width);
     }
   }
 
@@ -57,11 +65,6 @@ svg {
     font-size: var(--font-size-large);
   }
 
-  ul {
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
-    grid-gap: 10px;
-  }
 }
 
 .main {
