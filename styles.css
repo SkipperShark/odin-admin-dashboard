@@ -13,20 +13,14 @@
 
 svg {
     fill: white;
-
-    &,.title-svg {
-        height: 40px;
-        width: 40px;
-    }
-    .nav-svg {
-    
-    }
+    height: 24px;
+    width: 24px;
 }
-
 
 .text-with-icon {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .app {
@@ -46,16 +40,27 @@ svg {
     .siteLogo {
         border: 5px solid green;
         font-size: var(--font-size-title);
+
+        svg {
+            height: 40px;
+            width: 40px;
+        }
     }
 
     .nav {
         border: 5px solid red;
         font-size: var(--font-size-large);
     }
-
+    
     .settings {
         border: 5px solid yellow;
         font-size: var(--font-size-large);
+    }
+    
+    ul {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
+        grid-gap: 10px;
     }
 }
 
