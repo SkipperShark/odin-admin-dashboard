@@ -14,6 +14,7 @@
   --svg-height-large: 40px;
   --svg-height-medium: 24px;
   --general-spacing-px: 10px;
+  --input-rgba: rgba(211, 212, 217, 0.5)
 }
 
 svg {
@@ -21,16 +22,24 @@ svg {
   width: var(--svg-width);
 }
 
-.text-with-icon {
-  display: flex;
-  align-items: center;
-  gap: var(--general-spacing-px);
+input[type="text"] {
+  background-color: var(--input-rgba);
+  border: none;
+  border-radius: var(--general-spacing-px);
+  padding: 0 var(--general-spacing-px);
 }
+
 
 .app {
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(min-content, 1fr) 4fr;
+}
+
+.text-with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--general-spacing-px);
 }
 
 .sideBar {
@@ -51,7 +60,7 @@ svg {
     grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
     grid-gap: 10px;
   }
-  
+
   .siteLogo {
     font-size: var(--font-size-title);
 
@@ -81,8 +90,10 @@ svg {
       "searchBar banner"
       "userInfo buttons";
 
+    padding: var(--general-spacing-px);
+
     > * {
-      border: 2px solid blue;
+      border: 1px solid blue;
     }
 
     .searchBar {
