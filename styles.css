@@ -6,6 +6,8 @@
 }
 
 :root {
+  --primary-color: indigo;
+  --secondary-color: navy;
   --font-size-title: 2rem;
   --font-size-large: 1.5rem;
   --font-size-medium: 1rem;
@@ -17,10 +19,39 @@
   --input-rgba: rgba(211, 212, 217, 0.5)
 }
 
+button {
+  font-weight: bold;
+  color: white;
+  background: var(--primary-color);
+  padding: var(--general-spacing-px) 2em;
+  border-radius: 15px;
+  border: none;
+}
+
 svg {
   height: var(--svg-height-medium);
   width: var(--svg-width);
+  
+  &.large-icon {
+    height: var(--svg-height-large);
+  }
+  
+  &.small-icon {
+    
+  }
+  
+  &.nav-icon {
+    fill: white;
+  }
+
+  &.user-profile-icon {
+    padding: 3px;
+    fill: white;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+  }
 }
+
 
 input[type="text"] {
   background-color: var(--input-rgba);
@@ -48,12 +79,8 @@ input[type="text"] {
   grid-gap: var(--svg-height-large);
   grid-template-rows: repeat(3, minmax(3rem, min-content));
   
-  background-color: indigo;
+  background-color: var(--primary-color);
   color: white;
-
-  svg {
-    fill: white;
-  }
 
   ul {
     display: grid;
@@ -63,10 +90,6 @@ input[type="text"] {
 
   .siteLogo {
     font-size: var(--font-size-title);
-
-    svg {
-      height: var(--svg-height-large);
-    }
   }
 
   .nav,
@@ -84,10 +107,10 @@ input[type="text"] {
 
   .header {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 3fr min-content;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
-      "searchBar banner"
+      "searchBar searchBar"
       "userInfo buttons";
 
     padding: var(--general-spacing-px);
@@ -100,16 +123,16 @@ input[type="text"] {
       grid-area: searchBar;
     }
 
-    .banner {
-      grid-area: banner;
-    }
-
     .userInfo {
       grid-area: userInfo;
     }
 
     .buttons {
       grid-area: buttons;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: var(--general-spacing-px)
     }
   }
 
