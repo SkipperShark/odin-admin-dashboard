@@ -125,6 +125,25 @@ input[type="text"] {
 
     .userInfo {
       grid-area: userInfo;
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "profilePhoto intro"
+        "profilePhoto handle";
+
+      .user-profile-icon {
+        grid-area: profilePhoto;
+      }
+
+      .intro-message {
+        grid-area: intro;
+      }
+
+      .handle {
+        grid-area: handle;
+      }
+      
     }
 
     .buttons {
