@@ -12,10 +12,8 @@
     --font-size-large: 1.25rem;
     --font-size-medium: 1rem;
     --font-size-small: 0.75rem;
-    --svg-width: 50px;
     --svg-height-largest: 50px;
-    --svg-height-medium: 35px;
-    --svg-height-small: 24px;
+    --svg-height-medium: 24px;
     --general-spacing-px: 10px;
     --input-rgba: rgba(211, 212, 217, 0.5)
 }
@@ -31,19 +29,18 @@ button {
 
 svg {
     aspect-ratio: 1 / 1;
-    height: var(--svg-height-small);
+    height: var(--svg-height-medium);
 
-    &.large-icon {
-        height: var(--svg-height-largest);
+    &.nav-icon {
+        fill: white;
     }
 
     &.small-icon {
         height: var(--svg-height-medium);
-        width: var(--svg-height-medium);
     }
 
-    &.nav-icon {
-        fill: white;
+    &.largest-icon {
+        height: var(--svg-height-largest);
     }
 
     &.user-profile-icon {
