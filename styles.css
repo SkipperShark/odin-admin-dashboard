@@ -9,13 +9,13 @@
   --primary-color: indigo;
   --secondary-color: navy;
   --font-size-title: 2rem;
-  --font-size-large: 1.5rem;
+  --font-size-large: 1.25rem;
   --font-size-medium: 1rem;
   --font-size-small: 0.75rem;
   --svg-width: 50px;
   --svg-height-large: 50px;
   --svg-height-medium: 24px;
-  --general-spacing-px: 8px;
+  --general-spacing-px: 10px;
   --input-rgba: rgba(211, 212, 217, 0.5)
 }
 
@@ -37,7 +37,8 @@ svg {
   }
   
   &.small-icon {
-    
+    height: var(--svg-height-medium);
+    width: var(--svg-height-medium);
   }
   
   &.nav-icon {
@@ -60,7 +61,6 @@ input[type="text"] {
   padding: 0 var(--general-spacing-px);
 }
 
-
 .app {
   min-height: 100vh;
   display: grid;
@@ -82,6 +82,7 @@ input[type="text"] {
 
   background-color: var(--primary-color);
   color: white;
+  font-weight: bold;
 
   ul {
     display: grid;
@@ -95,14 +96,14 @@ input[type="text"] {
 
   .nav,
   .settings {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-medium);
   }
 
 }
 
 .main {
   display: grid;
-  grid-template-rows: minmax(min-content, 1fr) 5fr;
+  grid-template-rows: minmax(min-content, max-content) 1fr;
 
   background: white;
 
@@ -115,15 +116,18 @@ input[type="text"] {
       "userInfo buttons";
 
     padding: var(--general-spacing-px);
+    grid-row-gap: var(--general-spacing-px);
 
-    > * {
+    > div {
       border: 1px solid blue;
+      display: flex;
+      align-items: center;
     }
 
     .searchBar {
       grid-area: searchBar;
       display: flex;
-      padding: var(--general-spacing-px);
+      gap: var(--general-spacing-px);
 
       input {
         flex: 1 0;
@@ -132,13 +136,16 @@ input[type="text"] {
     }
 
     .userInfo {
-      grid-area: userInfo;
       display: grid;
+      grid-area: userInfo;
       grid-template-columns: min-content 1fr;
       grid-template-rows: 1fr 1fr;
       grid-template-areas:
         "profilePhoto intro"
         "profilePhoto handle";
+
+      font-weight: bold;
+      column-gap: var(--general-spacing-px);
 
       .user-profile-icon {
         grid-area: profilePhoto;
@@ -146,10 +153,12 @@ input[type="text"] {
 
       .intro-message {
         grid-area: intro;
+        font-size: var(--font-size-small);
       }
 
       .handle {
         grid-area: handle;
+        font-size: var(--font-size-large);
       }
       
     }
