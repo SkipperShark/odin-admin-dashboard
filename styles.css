@@ -12,10 +12,10 @@
   --font-size-large: 1.5rem;
   --font-size-medium: 1rem;
   --font-size-small: 0.75rem;
-  --svg-width: 40px;
-  --svg-height-large: 40px;
+  --svg-width: 50px;
+  --svg-height-large: 50px;
   --svg-height-medium: 24px;
-  --general-spacing-px: 10px;
+  --general-spacing-px: 8px;
   --input-rgba: rgba(211, 212, 217, 0.5)
 }
 
@@ -67,25 +67,26 @@ input[type="text"] {
   grid-template-columns: minmax(min-content, 1fr) 4fr;
 }
 
-.text-with-icon {
+.sideBar-item {
   display: flex;
   align-items: center;
   gap: var(--general-spacing-px);
 }
 
 .sideBar {
-  padding: var(--general-spacing-px);
   display: grid;
   grid-gap: var(--svg-height-large);
   grid-template-rows: repeat(3, minmax(3rem, min-content));
   
+  padding: var(--general-spacing-px);
+
   background-color: var(--primary-color);
   color: white;
 
   ul {
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
-    grid-gap: 10px;
+    grid-gap: var(--general-spacing-px);
   }
 
   .siteLogo {
@@ -107,7 +108,7 @@ input[type="text"] {
 
   .header {
     display: grid;
-    grid-template-columns: 3fr min-content;
+    grid-template-columns: 1fr min-content;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "searchBar searchBar"
@@ -121,6 +122,13 @@ input[type="text"] {
 
     .searchBar {
       grid-area: searchBar;
+      display: flex;
+      padding: var(--general-spacing-px);
+
+      input {
+        flex: 1 0;
+        height: 100%;
+      }
     }
 
     .userInfo {
