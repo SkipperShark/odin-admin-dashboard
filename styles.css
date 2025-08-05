@@ -10,11 +10,11 @@
     --svg-height-large: 40px;
     --svg-height-medium: 24px;
     --general-spacing-px: 10px;
-
+    
     --primary-color: indigo;
     --secondary-color: navy;
-    --input-rgba: rgba(211, 212, 217, 0.5)
-
+    --input-rgba: rgba(211, 212, 217, 0.5);
+    
     --font-size-title: 2rem;
     --font-size-large: 1.25rem;
     --font-size-medium: 1rem;
@@ -33,19 +33,19 @@ button {
 svg {
     aspect-ratio: 1 / 1;
     height: var(--svg-height-medium);
-
+    
     &.nav-icon {
         fill: white;
     }
-
+    
     &.large-icon {
         height: var(--svg-height-large);
     }
-
+    
     &.largest-icon {
         height: var(--svg-height-largest);
     }
-
+    
     &.user-profile-icon {
         padding: 3px;
         fill: white;
@@ -73,13 +73,13 @@ input[type="text"] {
     display: grid;
     row-gap: var(--svg-height-largest);
     grid-template-rows: repeat(3, minmax(3rem, min-content));
-
+    
     padding: var(--general-spacing-px);
-
+    
     background-color: var(--primary-color);
     color: white;
     font-weight: bold;
-
+    
     .sideBar-item {
         display: grid;
         grid-template-columns: calc(var(--svg-height-largest)) 1fr;
@@ -91,7 +91,7 @@ input[type="text"] {
             justify-self: center;
         }
     }
-
+    
     ul {
         display: grid;
         grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
@@ -101,7 +101,7 @@ input[type="text"] {
     .siteLogo {
         font-size: var(--font-size-title);
     }
-
+    
     .nav,
     .settings {
         font-size: var(--font-size-medium);
@@ -111,95 +111,95 @@ input[type="text"] {
 .main {
     display: grid;
     grid-template-rows: minmax(min-content, max-content) 1fr;
-
+    
     background: white;
-
+    
     .header {
         display: grid;
         grid-template-columns: 1fr min-content;
         grid-template-rows: 1fr 1fr;
         grid-template-areas:
-            "searchBar searchBar"
-            "userInfo buttons";
-
+        "searchBar searchBar"
+        "userInfo buttons";
+        
         padding: var(--general-spacing-px);
         grid-row-gap: var(--general-spacing-px);
-
+        
         >div {
             border: 1px solid blue;
             display: flex;
             align-items: center;
         }
-
+        
         .searchBar {
             grid-area: searchBar;
             display: flex;
             gap: var(--general-spacing-px);
-
+            
             input {
                 flex: 1 0;
                 height: 100%;
             }
         }
-
+        
         .userInfo {
             display: grid;
             grid-area: userInfo;
             grid-template-columns: min-content 1fr;
             grid-template-rows: 1fr 1fr;
             grid-template-areas:
-                "profilePhoto intro"
-                "profilePhoto handle";
-
+            "profilePhoto intro"
+            "profilePhoto handle";
+            
             font-weight: bold;
             column-gap: var(--general-spacing-px);
-
+            
             .user-profile-icon {
                 grid-area: profilePhoto;
             }
-
+            
             .intro-message {
                 grid-area: intro;
                 font-size: var(--font-size-small);
             }
-
+            
             .handle {
                 grid-area: handle;
                 font-size: var(--font-size-large);
             }
-
+            
         }
-
+        
         .buttons {
             grid-area: buttons;
             display: flex;
             justify-content: space-around;
-            align-items: end;
+            align-items: center;
             gap: var(--general-spacing-px)
         }
     }
-
+    
     .content {
         background-color: lightgray;
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas:
-            "projects announcements"
-            "projects trending";
-
+        "projects announcements"
+        "projects trending";
+        
         >* {
             border: 3px solid green;
         }
-
+        
         .projects {
             grid-area: projects;
         }
-
+        
         .announcements {
             grid-area: announcements;
         }
-
+        
         .trending {
             grid-area: trending;
         }
