@@ -1,202 +1,207 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
-  --primary-color: indigo;
-  --secondary-color: navy;
-  --font-size-title: 2rem;
-  --font-size-large: 1.25rem;
-  --font-size-medium: 1rem;
-  --font-size-small: 0.75rem;
-  --svg-width: 50px;
-  --svg-height-large: 50px;
-  --svg-height-medium: 35px;
-  --svg-height-small: 24px;
-  --general-spacing-px: 10px;
-  --input-rgba: rgba(211, 212, 217, 0.5)
+    --primary-color: indigo;
+    --secondary-color: navy;
+    --font-size-title: 2rem;
+    --font-size-large: 1.25rem;
+    --font-size-medium: 1rem;
+    --font-size-small: 0.75rem;
+    --svg-width: 50px;
+    --svg-height-largest: 50px;
+    --svg-height-medium: 35px;
+    --svg-height-small: 24px;
+    --general-spacing-px: 10px;
+    --input-rgba: rgba(211, 212, 217, 0.5)
 }
 
 button {
-  font-weight: bold;
-  color: white;
-  background: var(--primary-color);
-  padding: var(--general-spacing-px) 2em;
-  border-radius: 15px;
-  border: none;
+    font-weight: bold;
+    color: white;
+    background: var(--primary-color);
+    padding: var(--general-spacing-px) 2em;
+    border-radius: 15px;
+    border: none;
 }
 
 svg {
-  aspect-ratio: 1 / 1;
-  height: var(--svg-height-small);
-  /* width: var(--svg-width); */
-  
-  &.large-icon {
-    height: var(--svg-height-large);
-  }
-  
-  &.small-icon {
-    height: var(--svg-height-medium);
-    width: var(--svg-height-medium);
-  }
-  
-  &.nav-icon {
-    fill: white;
-  }
+    aspect-ratio: 1 / 1;
+    height: var(--svg-height-small);
 
-  &.user-profile-icon {
-    padding: 3px;
-    fill: white;
-    background-color: var(--secondary-color);
-    border-radius: 50%;
-  }
+    &.large-icon {
+        height: var(--svg-height-largest);
+    }
+
+    &.small-icon {
+        height: var(--svg-height-medium);
+        width: var(--svg-height-medium);
+    }
+
+    &.nav-icon {
+        fill: white;
+    }
+
+    &.user-profile-icon {
+        padding: 3px;
+        fill: white;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+    }
 }
 
 
 input[type="text"] {
-  background-color: var(--input-rgba);
-  border: none;
-  border-radius: var(--general-spacing-px);
-  padding: 0 var(--general-spacing-px);
+    background-color: var(--input-rgba);
+    border: none;
+    border-radius: var(--general-spacing-px);
+    padding: 0 var(--general-spacing-px);
 }
 
 .app {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: minmax(min-content, 1fr) 4fr;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) 4fr;
 }
 
-.sideBar-item {
-  display: flex;
-  align-items: center;
-  gap: var(--general-spacing-px);
-}
 
 .sideBar {
-  display: grid;
-  grid-gap: var(--svg-height-large);
-  grid-template-rows: repeat(3, minmax(3rem, min-content));
-  
-  padding: var(--general-spacing-px);
-
-  background-color: var(--primary-color);
-  color: white;
-  font-weight: bold;
-
-  ul {
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
-    grid-gap: var(--general-spacing-px);
-  }
+    row-gap: var(--svg-height-largest);
+    grid-template-rows: repeat(3, minmax(3rem, min-content));
 
-  .siteLogo {
-    font-size: var(--font-size-title);
-  }
+    padding: var(--general-spacing-px);
 
-  .nav,
-  .settings {
-    font-size: var(--font-size-medium);
-  }
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
 
+    .sideBar-item {
+        display: grid;
+        grid-template-columns: calc(var(--svg-height-largest)) 1fr;
+        column-gap: var(--general-spacing-px);
+        align-items: center;
+        
+        svg {
+            grid-column: 1 / 2;
+            justify-self: center;
+        }
+    }
+
+    ul {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
+        row-gap: var(--general-spacing-px);
+    }
+    
+    .siteLogo {
+        font-size: var(--font-size-title);
+    }
+
+    .nav,
+    .settings {
+        font-size: var(--font-size-medium);
+    }
 }
 
 .main {
-  display: grid;
-  grid-template-rows: minmax(min-content, max-content) 1fr;
-
-  background: white;
-
-  .header {
     display: grid;
-    grid-template-columns: 1fr min-content;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "searchBar searchBar"
-      "userInfo buttons";
+    grid-template-rows: minmax(min-content, max-content) 1fr;
 
-    padding: var(--general-spacing-px);
-    grid-row-gap: var(--general-spacing-px);
+    background: white;
 
-    > div {
-      border: 1px solid blue;
-      display: flex;
-      align-items: center;
+    .header {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "searchBar searchBar"
+            "userInfo buttons";
+
+        padding: var(--general-spacing-px);
+        grid-row-gap: var(--general-spacing-px);
+
+        >div {
+            border: 1px solid blue;
+            display: flex;
+            align-items: center;
+        }
+
+        .searchBar {
+            grid-area: searchBar;
+            display: flex;
+            gap: var(--general-spacing-px);
+
+            input {
+                flex: 1 0;
+                height: 100%;
+            }
+        }
+
+        .userInfo {
+            display: grid;
+            grid-area: userInfo;
+            grid-template-columns: min-content 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+                "profilePhoto intro"
+                "profilePhoto handle";
+
+            font-weight: bold;
+            column-gap: var(--general-spacing-px);
+
+            .user-profile-icon {
+                grid-area: profilePhoto;
+            }
+
+            .intro-message {
+                grid-area: intro;
+                font-size: var(--font-size-small);
+            }
+
+            .handle {
+                grid-area: handle;
+                font-size: var(--font-size-large);
+            }
+
+        }
+
+        .buttons {
+            grid-area: buttons;
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+            gap: var(--general-spacing-px)
+        }
     }
 
-    .searchBar {
-      grid-area: searchBar;
-      display: flex;
-      gap: var(--general-spacing-px);
+    .content {
+        background-color: lightgray;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "projects announcements"
+            "projects trending";
 
-      input {
-        flex: 1 0;
-        height: 100%;
-      }
+        >* {
+            border: 3px solid green;
+        }
+
+        .projects {
+            grid-area: projects;
+        }
+
+        .announcements {
+            grid-area: announcements;
+        }
+
+        .trending {
+            grid-area: trending;
+        }
     }
-
-    .userInfo {
-      display: grid;
-      grid-area: userInfo;
-      grid-template-columns: min-content 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas:
-        "profilePhoto intro"
-        "profilePhoto handle";
-
-      font-weight: bold;
-      column-gap: var(--general-spacing-px);
-
-      .user-profile-icon {
-        grid-area: profilePhoto;
-      }
-
-      .intro-message {
-        grid-area: intro;
-        font-size: var(--font-size-small);
-      }
-
-      .handle {
-        grid-area: handle;
-        font-size: var(--font-size-large);
-      }
-      
-    }
-
-    .buttons {
-      grid-area: buttons;
-      display: flex;
-      justify-content: space-around;
-      align-items: end;
-      gap: var(--general-spacing-px)
-    }
-  }
-
-  .content {
-    background-color: lightgray;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "projects announcements"
-      "projects trending";
-
-    > * {
-      border: 3px solid green;
-    }
-
-    .projects {
-      grid-area: projects;
-    }
-
-    .announcements {
-      grid-area: announcements;
-    }
-
-    .trending {
-      grid-area: trending;
-    }
-  }
 }
