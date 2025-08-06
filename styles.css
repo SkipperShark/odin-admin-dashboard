@@ -197,7 +197,14 @@ input[type="text"] {
         padding: var(--general-spacing-px);
     }
 
+    .card {
+        background-color: white;
+        padding: var(--general-spacing-px);
+        border-radius: var(--general-spacing-px);
+    }
+
     .content-title {
+        padding: var(--general-spacing-px);
         font-size: large;
         font-weight: bold;
     }
@@ -210,12 +217,16 @@ input[type="text"] {
         grid-area: announcements;
         font-size: var(--font-size-medium);
 
-        li {
-            font-size: small;
+        .card {
+            
         }
         
         .card-title {
             font-weight: bold;
+        }
+
+        .announcment-card {
+            font-size: small;
         }
     }
     
