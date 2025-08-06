@@ -17,6 +17,7 @@ ul {
     
     --primary-color: indigo;
     --secondary-color: navy;
+    --subtext-color: rgb(66, 66, 66);
     --input-rgba: rgba(211, 212, 217, 0.5);
     
     --font-size-title: 2rem;
@@ -201,6 +202,22 @@ input[type="text"] {
         background-color: white;
         padding: var(--general-spacing-px);
         border-radius: var(--general-spacing-px);
+
+        color: var(--subtext-color);
+
+        .section-title {
+            font-weight: bold;
+            color: black;
+        }
+
+        li {
+            padding: var(--general-spacing-px);
+            border-bottom: 1px solid grey;
+        }
+        
+        li:last-child {
+            border: none;
+        }
     }
 
     .content-title {
@@ -217,13 +234,6 @@ input[type="text"] {
         grid-area: announcements;
         font-size: var(--font-size-medium);
 
-        .card {
-            
-        }
-        
-        .card-title {
-            font-weight: bold;
-        }
 
         .announcment-card {
             font-size: small;
