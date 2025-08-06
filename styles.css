@@ -198,6 +198,24 @@ input[type="text"] {
         padding: var(--general-spacing-px);
     }
 
+    .projects {
+        grid-area: projects;
+    }
+    
+    .announcements {
+        grid-area: announcements;
+    }
+    
+    .trending {
+        grid-area: trending;
+    }
+    
+    .content-section-title {
+        padding: var(--general-spacing-px);
+        font-size: large;
+        font-weight: bold;
+    }
+    
     .card {
         background-color: white;
         padding: var(--general-spacing-px);
@@ -221,27 +239,5 @@ input[type="text"] {
         }
     }
 
-    .content-section-title {
-        padding: var(--general-spacing-px);
-        font-size: large;
-        font-weight: bold;
-    }
     
-    .projects {
-        grid-area: projects;
-    }
-    
-    .announcements {
-        grid-area: announcements;
-        font-size: var(--font-size-medium);
-
-
-        .announcment-card {
-            font-size: small;
-        }
-    }
-    
-    .trending {
-        grid-area: trending;
-    }
 }
