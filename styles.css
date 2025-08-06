@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
 :root {
     --svg-height-largest: 50px;
     --svg-height-large: 40px;
@@ -111,97 +115,111 @@ input[type="text"] {
 .main {
     display: grid;
     grid-template-rows: minmax(min-content, max-content) 1fr;
-    
     background: white;
+}
     
-    .header {
-        display: grid;
-        grid-template-columns: 1fr min-content;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
-        "searchBar searchBar"
-        "userInfo buttons";
+.header {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "searchBar searchBar"
+    "userInfo buttons";
+    
+    padding: var(--general-spacing-px);
+    grid-row-gap: var(--general-spacing-px);
+    
+    >div {
+        border: 1px solid blue;
+        display: flex;
+        align-items: center;
+    }
+    
+    .searchBar {
+        grid-area: searchBar;
+        display: flex;
+        gap: var(--general-spacing-px);
         
-        padding: var(--general-spacing-px);
-        grid-row-gap: var(--general-spacing-px);
-        
-        >div {
-            border: 1px solid blue;
-            display: flex;
-            align-items: center;
-        }
-        
-        .searchBar {
-            grid-area: searchBar;
-            display: flex;
-            gap: var(--general-spacing-px);
-            
-            input {
-                flex: 1 0;
-                height: 100%;
-            }
-        }
-        
-        .userInfo {
-            display: grid;
-            grid-area: userInfo;
-            grid-template-columns: min-content 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-template-areas:
-            "profilePhoto intro"
-            "profilePhoto handle";
-            
-            font-weight: bold;
-            column-gap: var(--general-spacing-px);
-            
-            .user-profile-icon {
-                grid-area: profilePhoto;
-            }
-            
-            .intro-message {
-                grid-area: intro;
-                font-size: var(--font-size-small);
-            }
-            
-            .handle {
-                grid-area: handle;
-                font-size: var(--font-size-large);
-            }
-            
-        }
-        
-        .buttons {
-            grid-area: buttons;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: var(--general-spacing-px)
+        input {
+            flex: 1 0;
+            height: 100%;
         }
     }
     
-    .content {
-        background-color: lightgray;
+    .userInfo {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-area: userInfo;
+        grid-template-columns: min-content 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas:
-        "projects announcements"
-        "projects trending";
+        "profilePhoto intro"
+        "profilePhoto handle";
         
-        >* {
-            border: 3px solid green;
+        font-weight: bold;
+        column-gap: var(--general-spacing-px);
+        
+        .user-profile-icon {
+            grid-area: profilePhoto;
         }
         
-        .projects {
-            grid-area: projects;
+        .intro-message {
+            grid-area: intro;
+            font-size: var(--font-size-small);
         }
         
-        .announcements {
-            grid-area: announcements;
+        .handle {
+            grid-area: handle;
+            font-size: var(--font-size-large);
         }
         
-        .trending {
-            grid-area: trending;
+    }
+    
+    .buttons {
+        grid-area: buttons;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: var(--general-spacing-px)
+    }
+}
+    
+.content {
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: 3fr minmax(min-content, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "projects announcements"
+    "projects trending";
+    
+    > * {
+        border: 3px solid green;
+        padding: var(--general-spacing-px);
+    }
+
+    .content-title {
+        font-size: large;
+        font-weight: bold;
+    }
+    
+    .projects {
+        grid-area: projects;
+    }
+    
+    .announcements {
+        grid-area: announcements;
+        font-size: var(--font-size-medium);
+
+        li {
+            font-size: small;
         }
+        
+        .card-title {
+            font-weight: bold;
+        }
+    }
+    
+    .trending {
+        grid-area: trending;
     }
 }
