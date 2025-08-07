@@ -131,7 +131,6 @@ input[type="text"] {
     grid-row-gap: var(--general-spacing-px);
     
     >div {
-        border: 1px solid blue;
         display: flex;
         align-items: center;
     }
@@ -194,7 +193,6 @@ input[type="text"] {
     "projects trending";
     
     > * {
-        border: 3px solid green;
         padding: var(--general-spacing-px);
     }
 
