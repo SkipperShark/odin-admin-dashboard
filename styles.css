@@ -247,6 +247,12 @@ input[type="text"] {
     
     .projects {
         grid-area: projects;
+        
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--general-spacing-px);
+        }
 
         .card-title {
             font-size: var(--font-size-large);
