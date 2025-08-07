@@ -223,7 +223,7 @@ input[type="text"] {
 
         color: var(--subtext-color);
 
-        .section-title {
+        .card-title {
             font-weight: bold;
             color: black;
             margin-bottom: calc(var(--general-spacing-px) / 2);
