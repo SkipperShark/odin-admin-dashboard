@@ -17,6 +17,7 @@ ul {
     
     --primary-color: indigo;
     --secondary-color: navy;
+    --tertiary-color: orange;
     --subtext-color: rgb(66, 66, 66);
     --input-rgba: rgba(211, 212, 217, 0.5);
     
@@ -254,6 +255,10 @@ input[type="text"] {
     
     .projects {
         grid-area: projects;
+        
+        .card {
+            border-left: 8px solid var(--tertiary-color);
+        }
         
         .project-cards {
             display: grid;
