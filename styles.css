@@ -225,6 +225,12 @@ input[type="text"] {
             font-size: var(--font-size-medium);
         }
 
+        .card-buttons {
+            display: flex;
+            justify-content: end;
+            gap: var(--general-spacing-px);
+        }
+
         li {
             padding: var(--general-spacing-px);
             border-bottom: 1px solid grey;
