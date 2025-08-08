@@ -219,8 +219,7 @@ input[type="text"] {
         .card  li {
             display: grid;
             grid-template-columns: min-content 1fr;
-            grid-template-rows: 1fr 1fr;
-            align-items: center;
+            grid-template-rows: min-content min-content;
             column-gap: var(--general-spacing-px);
 
             svg {
@@ -242,8 +241,8 @@ input[type="text"] {
     
     
     .card {
-        display: grid;
-        grid-template-rows: min-content 1fr min-content;
+        display: flex;
+        flex-direction: column;
 
         background-color: white;
         padding: var(--general-spacing-px);
@@ -259,14 +258,8 @@ input[type="text"] {
             font-size: var(--font-size-medium);
         }
 
-        .card-buttons {
-            grid-row: -2;
-            display: flex;
-            justify-content: end;
-            gap: var(--general-spacing-px);
-        }
-
         li {
+            flex-grow: 1;
             padding: var(--general-spacing-px);
             border-bottom: 1px solid grey;
         }
@@ -287,6 +280,16 @@ input[type="text"] {
         
         .card {
             border-left: 8px solid var(--tertiary-color);
+            display: grid;
+            grid-template-rows: min-content 1fr min-content;
+
+            .card-buttons {
+                grid-row: -1;
+                display: flex;
+                justify-content: end;
+                gap: var(--general-spacing-px);
+            }
+
         }
         
         .project-cards {
