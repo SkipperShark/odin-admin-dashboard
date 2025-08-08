@@ -262,6 +262,9 @@ input[type="text"] {
             flex-grow: 1;
             padding: var(--general-spacing-px);
             border-bottom: 1px solid grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         li:last-child {
