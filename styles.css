@@ -216,11 +216,18 @@ input[type="text"] {
     .trending {
         grid-area: trending;
 
-        .card  li {
-            display: grid;
-            grid-template-columns: min-content 1fr;
-            grid-template-rows: min-content min-content;
-            column-gap: var(--general-spacing-px);
+        .card {
+
+            li {
+                
+            }
+            
+            div {
+                display: grid;
+                grid-template-columns: min-content 1fr;
+                grid-template-rows: min-content min-content;
+                column-gap: var(--general-spacing-px);
+            }
 
             svg {
                 grid-row: 1 / 3;
