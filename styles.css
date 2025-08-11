@@ -217,11 +217,6 @@ input[type="text"] {
         grid-area: trending;
 
         .card {
-
-            li {
-                
-            }
-            
             div {
                 display: grid;
                 grid-template-columns: min-content 1fr;
